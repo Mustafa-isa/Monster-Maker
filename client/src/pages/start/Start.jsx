@@ -120,7 +120,16 @@ function Start() {
             };
           })
         )
-        .catch((error) => console.error(error));
+        .catch((error) =>{
+
+          console.log(error)
+          SetContext(state =>{
+            return{
+              ...state,
+              isLoading: false,
+            }
+          })
+        })
     }
   };
   return (

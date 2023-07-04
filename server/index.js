@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 // const router =require('./openaiApi')
-let requestCount
+let requestCount =0
 const cors = require('cors')
 // app.use('/api',router)
 app.use(cors())
