@@ -11,14 +11,14 @@ function Header() {
   useEffect(() => {
     async function fetchRequestCount() {
       try {
-        const response = await fetch('http://localhost:4000/api/users/count', {
+        const response = await fetch('https://monster-creator.onrender.com/api/users/count', {
           headers: {
             Accept: 'application/json'
           }
         })
     const data =await response.json()
     console.log(data)
-    setRequestCount(data.count)
+    setRequestCount(data.count -1)
       } catch (error) {
       console.log(error)
       }

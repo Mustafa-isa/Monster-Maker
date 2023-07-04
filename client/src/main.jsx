@@ -8,8 +8,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <PayPalScriptProvider 
       options={{
-        "client-id":
-          "AXx5HijpPCCivSZQmkuZNDXCqFCdVyxPzZc9E4GTA4uWUOZbw-q2ZZ35upqwWCOGrvMEq5S9QUte3aTn",
+        "client-id":import.meta.env.VITE_APP_PAYPAL_KEY
+          
       }}>
     <BrowserRouter>
     
