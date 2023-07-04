@@ -93,16 +93,18 @@ function Start() {
        and has the following food preferences: steak. They have the following health 
        conditions: good. Their goal is weight loss and their routine is morning routine.`;
     
-  
+  const apiKey =import.meta.env.VITE_APP_API_KEY
 
-      fetch("https://monster-creator.onrender.com/api/monster_maker", {
+      fetch("https://api.openai.com/v1/engines/davinci-codex/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          
+          'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
           prompt: prompt,
+          max_tokens: 1000,
+          temperature: 0.5
         
         }),
       })
