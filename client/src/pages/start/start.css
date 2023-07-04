@@ -1,0 +1,160 @@
+.containerStart {
+
+margin: 10px;
+
+}
+  .contentFormAndPayment{
+    display: flex;
+    justify-content: space-between;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 50px auto;
+
+  }
+  @media(max-width:976px){
+    .contentFormAndPayment{
+      display: block;
+    }
+    .form_contgainer_flex{
+      flex-wrap: wrap;
+    }
+    .form input,
+    .form select,
+    .form textarea {
+      width: 70%;
+      padding: 6px;
+
+    
+    }
+  }
+  /* .Payment_container{
+
+  }
+  .formContainer{
+
+  } */
+  .form {
+    display: flex;
+    flex-direction: column;
+  width: 100%;
+    margin: 0 auto;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .form label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #111010;
+    text-transform: capitalize;
+    padding: 3px;
+  }
+  
+  .form input,
+  .form select,
+  .form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .form input:focus,
+  .form select:focus,
+  .form textarea:focus {
+    border-color: #0f1002;
+    outline: none;
+  }
+  
+  .form button {
+    width: 100%;
+    padding: 10px !important;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px !important;
+  }
+/*   
+  .form button:hover {
+    background-color: #0056b3;
+  } */
+  
+  .form_contgainer_flex{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  /* pop */
+  .popUpResponse{
+z-index: 20000;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, .7);
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+  }
+  .popContainer{
+    width: 80%;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+  }
+  h2.popuptitle{
+font-size: 30px;
+text-transform: capitalize;
+padding: 10px;
+color: #000;
+
+
+  }
+  h2.popuptitle span{
+    background-image: linear-gradient(to right, #d19512, #907a68, #865f08);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+  }
+  .reponse_text{
+    width: 90%;
+    margin: 10px auto;
+    height: 300px;
+    overflow-y: scroll;
+  }
+  .spinnerLoader{
+
+    z-index: 20000;
+  position: absolute;
+  top: 50px;
+  left: -10px;
+  bottom: -100px;
+  right: -10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }

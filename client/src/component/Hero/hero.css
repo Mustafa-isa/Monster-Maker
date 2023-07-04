@@ -1,0 +1,59 @@
+
+
+.head_text {
+  margin-top: 1.25rem;
+  font-size: 33px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: black;
+  text-transform: capitalize;
+}
+@media (min-width: 640px) {
+  .head_text {
+    font-size: 33px;
+
+  }
+}
+
+.orange_gradient {
+  background-image: linear-gradient(to right, #d19512, #907a68, #865f08);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.desc {
+  margin-top: 1.25rem;
+  font-size: 13px;
+  color: #4b5563;
+  max-width: 2xl;
+  text-transform: capitalize;
+  text-transform: capitalize;
+
+
+}
+@media (min-width: 640px) {
+  .desc {
+    font-size: 1.25rem;
+  }
+}
+.Hero_Container{
+  width: 85%;
+  margin: 10px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  
+}
+.Hero_Container .hero{
+  flex: 1;
+width: 400px;
+height: 400px;
+cursor: pointer;
+}
+.Hero_Container .info{
+  flex:1;
+}
