@@ -92,19 +92,18 @@ function Start() {
        cm tall, weighs 80 kilogram, has an activity level of moderately active, 
        and has the following food preferences: steak. They have the following health 
        conditions: good. Their goal is weight loss and their routine is morning routine.`;
-      const maxTokens = 1800;
-      const apiKey = import.meta.env.VITE_APP_API_KEY  ;
+    
+  
 
-      fetch("https://api.openai.com/v1/engines/davinci/completions", {
+      fetch("https://monster-creator.onrender.com/api/monster_maker", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
+          
         },
         body: JSON.stringify({
           prompt: prompt,
-          max_tokens: maxTokens,
-          temperature: 0.5,
+        
         }),
       })
         .then((response) => response.json())
@@ -114,7 +113,7 @@ function Start() {
             return {
               ...state,
               popupResponse: true,
-              response: data.choices[0].text,
+              response: data,
               isLoading: false,
             };
           })

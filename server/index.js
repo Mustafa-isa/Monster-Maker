@@ -1,13 +1,14 @@
 const express = require('express')
 const app = express()
-let requestCount = 0
+const router =require('./openaiApi')
+
 const cors = require('cors')
 app.use(cors())
 app.use((req, res, next) => {
   requestCount++
   next()
 })
-
+app.use('/api',router)
 app.get('/api/users/count', (req, res) => {
   const data = {
     count: requestCount
