@@ -5,7 +5,7 @@
   font-size: 33px;
   font-weight: 800;
   line-height: 1.15;
-  color: black;
+  color:#fff;
   text-transform: capitalize;
 }
 @media (min-width: 640px) {
@@ -25,7 +25,7 @@
 .desc {
   margin-top: 1.25rem;
   font-size: 13px;
-  color: #4b5563;
+  color: #b3b8c0;
   max-width: 2xl;
   text-transform: capitalize;
   text-transform: capitalize;

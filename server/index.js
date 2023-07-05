@@ -1,14 +1,19 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
+
 // const router =require('./openaiApi')
 let requestCount =0
 const cors = require('cors')
 // app.use('/api',router)
+
 app.use(cors())
 app.use((req, res, next) => {
   requestCount++
   next()
 })
+
+
 
 app.get('/api/users/count', (req, res) => {
   const data = {

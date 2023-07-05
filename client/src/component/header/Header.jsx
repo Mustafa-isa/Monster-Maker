@@ -1,5 +1,5 @@
 import {useState ,useEffect} from 'react'
-import Logo from '../../assets/healthyLogo.png'
+import Logo from '../../assets/healthyLogo.jpg'
 import "./header.css"
 import { useNavigate } from 'react-router-dom'
 import { faWhatsapp  } from '@fortawesome/free-brands-svg-icons';
@@ -39,6 +39,7 @@ function Header() {
 
 
 <FontAwesomeIcon icon={faUser} />
+<span className="tit">Monsters</span>
 <span className='usersStat'>{requestCount}</span>
   </div>
   <a  className='whatsapp' href="https://api.whatsapp.com/send?phone=01019394803">   <FontAwesomeIcon icon={faWhatsapp} /></a>

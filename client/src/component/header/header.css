@@ -1,5 +1,5 @@
 .header{
-  z-index: 8;
+  z-index: 30;
   width: 90%;
   margin: 10px auto;
   display: flex;
@@ -9,6 +9,12 @@
 .header .Logo{
 width: 80px;
 height: 80px;
+border-radius: 50%;
+border-image:  linear-gradient(
+  to bottom, 
+  red, 
+  rgba(0, 0, 0, 0)
+) 1 100%;
 }
 .contactInfo{
 display: flex;
@@ -17,21 +23,34 @@ align-items: center;
 }
 
 .userShown{
+  gap: 10px;
   font-size: 40px;
   position: relative;
+  padding: 15px 20px;
+  /* width: 100px; */
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+}
+.tit{
+  color: #150314;
+  font-size: 13px;
 }
 .userShown .usersStat{
   position: absolute;
   font-size: 14px;
-  padding: 5px;
+  padding: 8px;
   display: block;
   background: #150314;
   color: #fff;
   border-radius: 50%;
-  top: -5px;
-  left: -12px;sition: absolute;
+  top: -1px;
+  right: -5px;
+
 }
 .whatsapp{
   font-size: 40px;
-color: #860d68de;
+color: #eae3e9de;
 }

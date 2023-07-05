@@ -2,7 +2,7 @@
 .main {
 
 
-  background-color: #fdf2e9 !important;
+  
 z-index: 5;
 margin-bottom: 40px;
 }
@@ -66,8 +66,8 @@ margin-bottom: 40px;
   height: 40px;
   border: none;
   outline: none;
-  color: #fff;
-  background: #97b102;
+  color: #333;
+  background: #edefdf;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -97,9 +97,7 @@ margin-bottom: 40px;
   border-radius: 10px;
 }
 
-.glow-on-hover:active {
-  color: #000
-}
+
 
 .glow-on-hover:active:after {
   background: transparent;
@@ -115,7 +113,7 @@ margin-bottom: 40px;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: #fff;
   left: 0;
   top: 0;
   border-radius: 10px;
