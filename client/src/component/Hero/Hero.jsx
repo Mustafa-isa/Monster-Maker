@@ -1,6 +1,9 @@
 import React from "react";
-import HeroLogo from "../../assets/hero.png";
+
 import "./hero.css";
+import image1 from '../../assets/image1.jpg'
+import image2 from '../../assets/image2.webp'
+import image3 from '../../assets/image3.jpg'
 function Hero() {
   return (
     <div className="Hero_Container">
@@ -18,7 +21,11 @@ function Hero() {
         
         </p>
       </div>
-      <img  className='hero'src={HeroLogo} alt="Hero" />
+  <div className="ImageContainer">
+    <img className="imag1" src={image2} alt="" />
+    <img className="imag2" src={image3} alt="" />
+    <img className="imag3" src={image1} alt="" />
+  </div>
 
     </div>
   );

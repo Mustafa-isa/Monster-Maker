@@ -1,10 +1,11 @@
 import { React, useState ,useEffect } from "react";
 import { motion } from "framer-motion";
 import "./start.css";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import {  PayPalButtons } from "@paypal/react-paypal-js";
 import Header from "../../component/header/Header";
 import { ToastContainer, toast } from "react-toastify";
 import { BeatLoader } from "react-spinners";
+import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 function Start() {
   // count user
@@ -93,43 +94,60 @@ function Start() {
        and has the following food preferences: steak. They have the following health 
        conditions: good. Their goal is weight loss and their routine is morning routine.`;
     
-  const apiKey =import.meta.env.VITE_APP_API_KEY
+  const apiKey= "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"
 
-      fetch("https://api.openai.com/v1/engines/davinci-codex/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          prompt: prompt,
-          max_tokens: 1000,
-          temperature: 0.5
+  const apiUrl ='https://api.openai.com/v1/completions';
+
+  
+  axios
+    .post(apiUrl, {
+      prompt: prompt,
+      max_tokens: 1000,
+      temperature: 0.75,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+        model: 'text-davinci-002'
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      }
+    })
+    .then((response) => {
+      const data = response.data;
+      SetContext(state =>{
+      return{
+        ...state,
+        popupResponse: true,
+        isLoading: false,
+        response: data.choices[0].text,
+      }
+    })
+      // Handle the response data
+    })
+    .catch((error) => {
+      console.error(error);
+      SetContext(state=>{
+        return{
+          ...state,
+          isLoading:false
+        }
         
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) =>
-          SetContext((state) => {
-            console.log(data);
-            return {
-              ...state,
-              popupResponse: true,
-              response: data,
-              isLoading: false,
-            };
-          })
-        )
-        .catch((error) =>{
 
-          console.log(error)
-          SetContext(state =>{
-            return{
-              ...state,
-              isLoading: false,
-            }
-          })
-        })
+      })
+      toast.warn("🦄 there is error has happen ", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    });
+  
+  
     }
   };
   return (
