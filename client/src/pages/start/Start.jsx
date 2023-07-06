@@ -92,27 +92,24 @@ function Start() {
       const prompt = `Generate a diet plan for a 20-year-old male who is 175
        cm tall, weighs 80 kilogram, has an activity level of moderately active, 
        and has the following food preferences: steak. They have the following health 
-       conditions: good. Their goal is weight loss and their routine is morning routine.`;
+       conditions: good. Their goal is weight loss and their routine is morning routine and give me response in arabic.`;
     
-  const apiKey= "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"
 
-  const apiUrl ='https://api.openai.com/v1/completions';
+  const payload = {
+    prompt
+  };
+  
+  const config = {
+    headers: {
+      "Authorization": "Bearer YOUR_API_KEY_HERE",
+      "Content-Type": "application/json",
+    }
+  };
+  const apiUrl ='http://localhost:4000/monster';
 
   
   axios
-    .post(apiUrl, {
-      prompt: prompt,
-      max_tokens: 1000,
-      temperature: 0.75,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-        model: 'text-davinci-002'
-    }, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
-      }
-    })
+    .post(apiUrl,payload,config)
     .then((response) => {
       const data = response.data;
       SetContext(state =>{
@@ -120,7 +117,7 @@ function Start() {
         ...state,
         popupResponse: true,
         isLoading: false,
-        response: data.choices[0].text,
+        response: data.monster,
       }
     })
       // Handle the response data
